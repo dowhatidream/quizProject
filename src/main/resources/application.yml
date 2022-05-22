@@ -11,6 +11,10 @@ spring:
       suffix: .jsp
     static-path-pattern: /resources/**
 
+  devtools:
+    livereload:
+      enabled: true
+
 server:
   port: 8080
 
