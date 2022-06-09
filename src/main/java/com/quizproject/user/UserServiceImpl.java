@@ -1,6 +1,5 @@
 package com.quizproject.user;
 
-import com.quizproject.util.ReturnMessage;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mariadb://localhost:3306/quizProject
+    url: jdbc:mariadb://localhost:3306/quizProject?autoReconnect=true
     username: root
     password: 1234
     driver-class-name: org.mariadb.jdbc.Driver
@@ -20,5 +20,5 @@ server:
 
 mybatis:
   config:
-  type-aliases-package: com.game.project.**
+  type-aliases-package: com.quizproject.**
   mapper-locations: mybatis/mapper/**/*.xml

@@ -37,6 +37,7 @@ public class UserController {
         if (isSucceeded.equals("Y")) {
             HttpSession session = request.getSession();
             session.setAttribute("id", user.getId());
+            session.setAttribute("uId", user.getUId());
         }
         else {
 

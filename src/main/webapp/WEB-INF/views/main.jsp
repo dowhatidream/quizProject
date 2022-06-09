@@ -9,7 +9,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
     session = request.getSession();
-    System.out.println("세션:: " + session.getAttributeNames());
     String id = (String) session.getAttribute("id");
 %>
 <html>
@@ -18,6 +17,10 @@
     <script>
         function goLogin() {
             location.href = "/user/login.do";
+        }
+
+        function goGameB() {
+            location.href = "/gameB/game.do";
         }
 
     </script>
@@ -29,5 +32,7 @@
         <c:if test="${empty id}">없음</c:if>
     </p>
     <button type="button" onclick="goLogin()">로그인화면</button>
+    <br>
+    <button type="button" onclick="goGameB()">게임하러 가기</button>
 </body>
 </html>
