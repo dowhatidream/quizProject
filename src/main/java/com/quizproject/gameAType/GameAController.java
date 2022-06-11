@@ -1,5 +1,6 @@
 package com.quizproject.gameAType;
 
+import com.quizproject.playAType.PlayAService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.configurationprocessor.json.JSONObject;
@@ -17,7 +18,8 @@ import java.util.List;
 @RequiredArgsConstructor
 public class GameAController {
 
-    private final GameAServiceImpl service;
+    private final GameAService service;
+    private final PlayAService playAService;
 
     static int count; // serial
 
@@ -77,23 +79,7 @@ public class GameAController {
         return "/gameAType/gameAResult";
     }
 
-    @RequestMapping(value = "/gameAType/playGame.do", method = RequestMethod.GET)
-    public String openPlay(@RequestParam int gId, GameItemAVO gameItemAVO, Model model) {
 
-        // game에 대한 제목 및 설명
-        GameAVO vo = service.selectGame(gId);
-        model.addAttribute("vo", vo);
-
-        // gameitem
-        List<GameItemAVO> item_vo = service.selectGameItem(gameItemAVO);
-        for (int i = 0; i < item_vo.size(); i++){
-            System.out.println(">>>>> " + i + "번째: " + item_vo.get(i));
-            model.addAttribute("item_vo"+i, item_vo.get(i));
-        }
-
-
-        return "/gameAType/playGame";
-    }
 
 
 

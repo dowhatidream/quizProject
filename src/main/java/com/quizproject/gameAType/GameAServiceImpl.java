@@ -53,6 +53,7 @@ public class GameAServiceImpl implements GameAService {
     @Override
     public List<GameItemAVO> selectGameItem(GameItemAVO gameItemAVO) {
         System.out.println(">>>>> dao..selectGameItem: " + itemDao.selectGameItem(gameItemAVO));
+
         return itemDao.selectGameItem(gameItemAVO);
     }
 

@@ -44,7 +44,7 @@
       </tr>
       <c:forEach items="${vo}" var="vo">
           <tr>
-              <td> <a href="/gameAType/playGame.do?gId=${vo.GId}">${vo.title}</a></td>
+              <td> <a href="/playAType/playGame.do?gId=${vo.GId}">${vo.title}</a></td>
               <td>${vo.intro}</td>
               <td>${vo.GId}</td>
           </tr>

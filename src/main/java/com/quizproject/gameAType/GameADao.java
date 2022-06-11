@@ -21,7 +21,6 @@ public class GameADao {
     public void addResult(ResultVO resultVO){
         gameAMapper.insertResult(resultVO);
     }
-
     public List<GameAVO> selectList(){
         return gameAMapper.selectList();
     }
