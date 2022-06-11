@@ -10,7 +10,7 @@ public class GameAVO {
     private String intro; //소개글
     private String thumbnail;
     private String type;
-    private int uId;
+    private String uId;
 
 
 }

@@ -4,13 +4,15 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class GameAServiceImpl implements GameAService {
 
-
     private final GameADao gameDao;
     private final GameItemADao itemDao;
+    static int count; // serial
     static int gId;
 
     @Override
@@ -32,10 +34,26 @@ public class GameAServiceImpl implements GameAService {
     }
 
     @Override
-    public GameAVO selectGAME() {
+    public void addResult(ResultVO resultVO) {
+        gameDao.addResult(resultVO);
+    }
 
-        return gameDao.selectGAME();
+    @Override
+    public List<GameAVO> selectList() {
 
+        return gameDao.selectList();
+
+    }
+
+    @Override
+    public GameAVO selectGame(int gId) {
+        return gameDao.selectGame(gId);
+    }
+
+    @Override
+    public List<GameItemAVO> selectGameItem(GameItemAVO gameItemAVO) {
+        System.out.println(">>>>> dao..selectGameItem: " + itemDao.selectGameItem(gameItemAVO));
+        return itemDao.selectGameItem(gameItemAVO);
     }
 
 }

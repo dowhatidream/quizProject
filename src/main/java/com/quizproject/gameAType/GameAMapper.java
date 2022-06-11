@@ -2,6 +2,8 @@ package com.quizproject.gameAType;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 
 @Mapper
 public interface GameAMapper {
@@ -10,6 +12,9 @@ public interface GameAMapper {
 //    void insertGameItem1(int count, GameItemAVO gameItemAVO);
     void insertGameItem1(GameItemAVO gameItemAVO);
     void insertGameItem2(GameItemAVO gameItemAVO);
+    void insertResult(ResultVO resultVO);
     int selectGID();
-    GameAVO selectGAME();
+    List<GameAVO> selectList();
+    GameAVO selectGame(int gId);
+    List<GameItemAVO> selectGameItem(GameItemAVO gameItemAVO);
 }

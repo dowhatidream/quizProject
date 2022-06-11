@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: jeoungha
@@ -9,6 +10,7 @@
 <html>
 <head>
     <title>Title</title>
+    <script src="/js/jquery-3.6.0.js"></script>
     <script type="text/javascript">
         function addTest(){
             $.ajax({
@@ -25,12 +27,31 @@
                 }
             })
         }
+
     </script>
+
 </head>
 <body>
   질문 처리됨.
   <br/>
-  ${vo.title}
+
+      <br/>
+  <table border="1">
+      <tr>
+          <th>title</th>
+          <th>intro</th>
+          <th>gid</th>
+      </tr>
+      <c:forEach items="${vo}" var="vo">
+          <tr>
+              <td> <a href="/gameAType/playGame.do?gId=${vo.GId}">${vo.title}</a></td>
+              <td>${vo.intro}</td>
+              <td>${vo.GId}</td>
+          </tr>
+      </c:forEach>
+  </table>
+  <input type="button" onclick="sel()" value="값 가져오기">
+
 <input type="button" id="btn1" onclick="addTest()" value="가져오기">
 </body>
 </html>

@@ -46,7 +46,7 @@
                         $('#result').text('완료');
                     }
                     else if(count == 3){
-                        // window.location.href = "gameAResult.do";
+                        window.location.href = "../user/main.do";
                         console.log("finish.");
                     }
                 },
@@ -56,7 +56,11 @@
                 }
             })
         }
-
+    </script>
+    <script type="text/css">
+        html, body {
+            margin-left: 100px;
+        }
     </script>
 </head>
 <body>
@@ -67,13 +71,35 @@
     <form id="gameA" action="addGame.do">
         <input id="title" type="text" placeholder="테스트명을 입력해주세요." size="" name="title"><br /> <%-- title --%>
         <textarea id="intro" placeholder="테스트에 대한 설명을 입력해주세요." cols="50" rows="5" name="intro"></textarea><br /><br /><br /> <%-- intro --%>
-
+        <br/>
+        <h4>결과 값</h4>
+        <p>결과 값은 3개 설정 가능합니다.</p>
+        <br/>
+        1) <input type="text" name="value1" id="val1">
+        <br/>
+        2)<input type="text" name="value2" id="val2">
+        <br/>
+        3)<input type="text" name="value3" id="val3">
+        <br/><br/>
         <h3>문제</h3>
         <div id="main">
             <div id='test1'>
-                <input id='question' type='text' placeholder='질문을 입력해주세요.' name="subTitle"><br /> <%-- subtitle --%>
-                <input id='answer1' type='text' placeholder='선택지1를 입력해주세요.' name="content1"/><br /> <%-- content --%>
-                <input id='answer2' type='text' placeholder='선택지2를 입력해주세요.' name="content2"/><br /><br /> <%-- content --%>
+                <input id='question' type='text' placeholder='질문을 입력해주세요.' name="subTitle">
+                <br />
+                <input id='answer1' type='text' placeholder='선택지1를 입력해주세요.' name="content1"/>
+                <select name="score1">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+                <br />
+                <input id='answer2' type='text' placeholder='선택지2를 입력해주세요.' name="content2"/>
+                <select name="score2">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+                <br /><br />
             </div>
         </div>
         <button id="result" type="button" onclick="addData()">다음</button>

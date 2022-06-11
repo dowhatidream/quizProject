@@ -3,13 +3,13 @@ package com.quizproject.gameAType;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 @RequiredArgsConstructor
 public class GameADao {
 
     private final GameAMapper gameAMapper;
-    // gid
-    static int gId;
 
     public int selectGID(){
         return gameAMapper.selectGID();
@@ -18,10 +18,15 @@ public class GameADao {
     public void addGame(GameAVO gameAVO) {
         gameAMapper.insertGame(gameAVO);
     }
-
-    public GameAVO selectGAME(){
-        return gameAMapper.selectGAME();
+    public void addResult(ResultVO resultVO){
+        gameAMapper.insertResult(resultVO);
     }
 
+    public List<GameAVO> selectList(){
+        return gameAMapper.selectList();
+    }
+    public GameAVO selectGame(int gId){
+        return gameAMapper.selectGame(gId);
+    }
 
 }

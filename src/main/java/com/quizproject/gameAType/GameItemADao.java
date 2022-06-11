@@ -3,6 +3,8 @@ package com.quizproject.gameAType;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 @RequiredArgsConstructor
 public class GameItemADao {
@@ -17,6 +19,11 @@ public class GameItemADao {
         gameAMapper.insertGameItem1(gameItemAVO);
         gameAMapper.insertGameItem2(gameItemAVO);
 
+    }
+
+    public List<GameItemAVO> selectGameItem(GameItemAVO gameItemAVO){
+        System.out.println(">>>>> itemdao..itemvo: " + gameItemAVO);
+        return gameAMapper.selectGameItem(gameItemAVO);
     }
 
 }

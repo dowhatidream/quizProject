@@ -7,21 +7,34 @@
     </insert>
 
     <insert id="insertGameItem1">
-        INSERT INTO GAMEITEM(giId, serial, subTitle, content, gId, firstDt, lastDt)
-        VALUES ((SELECT IFNULL(MAX(giId)+1, 1) FROM GAMEITEM as a), #{count}, #{subTitle}, #{content1}, #{gId}, now(), now())
+        INSERT INTO GAMEITEM(giId, serial, subTitle, content, score, gId, firstDt, lastDt)
+        VALUES ((SELECT IFNULL(MAX(giId)+1, 1) FROM GAMEITEM as a), #{count}, #{subTitle}, #{content1}, #{score1}, #{gId}, now(), now())
     </insert>
 
     <insert id="insertGameItem2">
-        INSERT INTO GAMEITEM(giId, serial, subTitle, content, gId, firstDt, lastDt)
-        VALUES ((SELECT IFNULL(MAX(giId)+1, 1) FROM GAMEITEM as a), #{count}, #{subTitle}, #{content2}, #{gId}, now(), now())
+        INSERT INTO GAMEITEM(giId, serial, subTitle, content, score, gId, firstDt, lastDt)
+        VALUES ((SELECT IFNULL(MAX(giId)+1, 1) FROM GAMEITEM as a), #{count}, #{subTitle}, #{content2}, #{score2}, #{gId}, now(), now())
     </insert>
 
-    <select id="selectGID" resultType="int">
-        SELECT max(gId) FROM GAME
+    <insert id="insertResult">
+        INSERT INTO RESULT(gId, value)
+        VALUES (#{gId}, #{value1}), (#{gId}, #{value2}), (#{gId}, #{value3})
+    </insert>
+
+    <select id="selectGID" resultType="Integer">
+        SELECT IFNULL(max(gId), 0) FROM GAME
     </select>
 
-    <select id="selectGAME" resultType="com.quizproject.gameAType.GameAVO">
-        SELECT gId, title, intro, thumbnail, type, uId FROM GAME WHERE gId=2
+    <select id="selectList" resultType="GameAVO">
+        SELECT gId, title, intro, thumbnail, type, uId FROM GAME
+    </select>
+
+    <select id="selectGame" parameterType="Integer" resultType="GameAVO">
+        SELECT title, intro, thumbnail FROM GAME WHERE gId = #{gId}
+    </select>
+
+    <select id="selectGameItem" parameterType="Integer" resultType="GameItemAVO">
+        SELECT * FROM GAMEITEM WHERE gId = #{gId}
     </select>
 </mapper>
 

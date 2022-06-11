@@ -27,6 +27,10 @@
             location.href = "/gameAType/gameACreate.do";
         }
 
+        function goPlayGameA() {
+            location.href = "/gameAType/gameAResult.do";
+        }
+
     </script>
 </head>
 <body>
@@ -39,6 +43,8 @@
     <br>
     <button type="button" onclick="goGameB()">게임하러 가기</button>
     <br>
-    <button type="button" onclick="goGameA()">게임A하러 가기</button>
+    <button type="button" onclick="goGameA()">게임A생성하러 가기</button>
+    <br>
+    <button type="button" onclick="goPlayGameA()">게임A하러 가기</button>
 </body>
 </html>
