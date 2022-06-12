@@ -36,7 +36,7 @@
     <input type="text" id="id" name="id">
 
     <label>비밀번호: </label>
-    <input type="text" id="pw" name="pw">
+    <input type="password" id="pw" name="pw">
 
     <button type="button" onclick="goLogin()">로그인</button>
 </form>

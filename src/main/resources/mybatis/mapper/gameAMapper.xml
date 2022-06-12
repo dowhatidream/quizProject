@@ -3,7 +3,7 @@
 <mapper namespace="com.quizproject.gameAType.GameAMapper" >
     <insert id="insertGame">
         INSERT INTO GAME(gId, title, intro, type, uid, firstDt, lastDt)
-        VALUES (#{gId}, #{title}, #{intro}, 'quizA', 1, now(), now())
+        VALUES (#{gId}, #{title}, #{intro}, 'quizA', (SELECT uId FROM USER WHERE id=#{uId}), now(), now())
     </insert>
 
     <insert id="insertGameItem1">

@@ -71,7 +71,7 @@
         <textarea id="intro" placeholder="테스트에 대한 설명을 입력해주세요." cols="50" rows="5" name="intro"></textarea><br /><br /><br /> <%-- intro --%>
         <br/>
         <h4>결과 값</h4>
-        <p>결과 값은 3개 설정 가능합니다.</p>
+        <p>결과 값은 2개 설정 가능합니다.</p>
         <br/>
         1) <input type="text" name="value1" id="val1">
         <br/>
