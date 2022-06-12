@@ -27,7 +27,7 @@
         success: function (data) {
           //console.log(JSON.stringify(data));
           // console.log(JSON.stringify(data.gameVO.gid));
-          alert(data.msg + " / " + data.gId);
+          //alert(data.msg + " / " + data.gId);
           goGameItem(data.gId);
         },
         error: function (data) {
@@ -43,7 +43,6 @@
   <script src="/js/jquery-3.6.0.js"></script>
 </head>
 <body>
-  <p>현재:: ${gId}</p>
   <form id="gameForm">
     <input type="hidden" id="type" name="type" value="gameB">
 
@@ -59,6 +58,5 @@
     <button type="button" onclick="insertGame()">새 게임 생성</button><br><br>
   </form>
 
-  <button type="button" onclick="goGameItem()">질문 만들러 가기</button>
 </body>
 </html>

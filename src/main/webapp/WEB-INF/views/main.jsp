@@ -22,8 +22,38 @@
         function goGameB() {
             location.href = "/gameB/game.do";
         }
+        function doPlayB() {
+            location.href = "/playB/playList.do";
+        }
+
+        function goMyPlay() {
+            location.href = "/user/myPlay.do";
+        }
+
+        function gojoin() {
+            location.href = "/user/join.do";
+        }
+
+        function goMyPage() {
+            location.href = "/user/myPage.do";
+        }
+
+        function goLogout() {
+            $.ajax({
+                url: "/user/logout.ajax",
+                type: "POST",
+                contentType: "application/x-www-form-urlencoded;charset=UTF-8",
+                success: function () {
+                    alert("로그아웃 되었습니다")
+                },
+                error: function (data) {
+                    alert("로그아웃 실패");
+                }
+            });
+        }
 
     </script>
+    <script src="/js/jquery-3.6.0.js"></script>
 </head>
 <body>
     <h1>메인화면입니다!</h1>
@@ -31,8 +61,17 @@
         <c:if test="${not empty id}">${id}</c:if>
         <c:if test="${empty id}">없음</c:if>
     </p>
-    <button type="button" onclick="goLogin()">로그인화면</button>
+
+    <c:if test="${empty id}">
+        <button type="button" onclick="goLogin()">로그인</button>
+        <button type="button" onclick="gojoin()">회원가입</button>
+    </c:if>
+    <c:if test="${not empty id}">
+        <button type="button" onclick="goMyPage()">마이페이지</button>
+        <button type="button" onclick="goLogout()">로그아웃</button>
+    </c:if>
     <br>
-    <button type="button" onclick="goGameB()">게임하러 가기</button>
+    <button type="button" onclick="goGameB()">게임만들러 가기</button>
+    <button type="button" onclick="doPlayB()">게임 플레이하러 가기</button>
 </body>
 </html>

@@ -9,6 +9,7 @@ public class GameItemVO {
     private String subTitle;
     private String content;
     private String img;
+    private String answer;
     private int score;
     private String gId;
     private String firstDt;
