@@ -1,6 +1,6 @@
 package com.quizproject.playAType;
 
-import com.quizproject.gameAType.ResultVO;
+import com.quizproject.gameAType.ResultAVO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -27,7 +27,8 @@ public class PlayAServiceImpl implements PlayAService {
     }
 
     @Override
-    public ResultVO selectResult() {
+    public ResultAVO selectResult() {
+        System.out.println(">>>>> service.. pid: " + pid);
         return playADao.selectResult(pid);
     }
 

@@ -3,7 +3,7 @@ package com.quizproject.playAType;
 import com.quizproject.gameAType.GameAService;
 import com.quizproject.gameAType.GameAVO;
 import com.quizproject.gameAType.GameItemAVO;
-import com.quizproject.gameAType.ResultVO;
+import com.quizproject.gameAType.ResultAVO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -80,7 +80,7 @@ public class PlayAController {
     @RequestMapping(value = "/playAType/playGameAResult.do")
     public String openPlay(Model model) {
         System.out.println(">>>>> result start!!");
-        ResultVO resultVO = service.selectResult();
+        ResultAVO resultVO = service.selectResult();
         System.out.println(">>>>> resultVO: " + resultVO);
         model.addAttribute("resultVO", resultVO);
 

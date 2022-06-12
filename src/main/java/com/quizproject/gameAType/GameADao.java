@@ -18,7 +18,7 @@ public class GameADao {
     public void addGame(GameAVO gameAVO) {
         gameAMapper.insertGame(gameAVO);
     }
-    public void addResult(ResultVO resultVO){
+    public void addResult(ResultAVO resultVO){
         gameAMapper.insertResult(resultVO);
     }
     public List<GameAVO> selectList(){

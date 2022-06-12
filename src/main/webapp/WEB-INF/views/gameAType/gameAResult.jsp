@@ -50,7 +50,7 @@
 
 </head>
 <body>
-  질문 처리됨.
+<h3>테스트 A TYPE</h3>
   <br/>
 
       <br/>
@@ -68,8 +68,8 @@
           </tr>
       </c:forEach>
   </table>
-  <input type="button" onclick="sel()" value="값 가져오기">
+<%--  <input type="button" onclick="sel()" value="값 가져오기">--%>
 
-<input type="button" id="btn1" onclick="addTest()" value="가져오기">
+<%--<input type="button" id="btn1" onclick="addTest()" value="가져오기">--%>
 </body>
 </html>

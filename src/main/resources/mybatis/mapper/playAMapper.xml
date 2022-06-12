@@ -28,7 +28,7 @@
             (#{piId}+1, #{answer2}, #{pId}, #{giId2}, 2, now(), now()),
             (#{piId}+2, #{answer3}, #{pId}, #{giId3}, 3, now(), now())
     </insert>
-    <select id="selectResult" parameterType="INTEGER" resultType="ResultVO">
+    <select id="selectResult" parameterType="INTEGER" resultType="ResultAVO">
         SELECT COUNT(*) AS score, D.value AS value1
           FROM PLAYITEM AS A
             INNER JOIN PLAY AS B
@@ -36,7 +36,7 @@
             INNER JOIN GAMEITEM AS C
                     ON B.gId = C.gId
                    AND A.giId = C.giId
-            INNER JOIN RESULT AS D
+            LEFT JOIN RESULT AS D
                     ON D.gId = B.gId
                    AND D.serial = C.score
         WHERE A.pId = #{pId}

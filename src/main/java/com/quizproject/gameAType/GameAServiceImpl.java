@@ -34,7 +34,7 @@ public class GameAServiceImpl implements GameAService {
     }
 
     @Override
-    public void addResult(ResultVO resultVO) {
+    public void addResult(ResultAVO resultVO) {
         gameDao.addResult(resultVO);
     }
 

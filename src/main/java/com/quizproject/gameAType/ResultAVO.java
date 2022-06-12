@@ -3,7 +3,7 @@ package com.quizproject.gameAType;
 import lombok.Data;
 
 @Data
-public class ResultVO {
+public class ResultAVO {
     private int gId;
     private String value1;
     private String value2;

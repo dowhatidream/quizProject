@@ -37,7 +37,7 @@ public class GameAController {
 
     // game, gameItem ajax
     @PostMapping(value = "/gameAType/addMain.ajax")
-    public ModelAndView addData(GameAVO gameAVO, GameItemAVO gameItemAVO, ResultVO resultVO) {
+    public ModelAndView addData(GameAVO gameAVO, GameItemAVO gameItemAVO, ResultAVO resultVO) {
         System.out.println("ajax 시작");
         System.out.println(">>>>>> gameAVO: " + gameAVO);
         System.out.println(">>>>>> gameItemAVO: " + gameItemAVO);

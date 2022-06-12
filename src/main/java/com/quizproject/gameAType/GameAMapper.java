@@ -12,7 +12,7 @@ public interface GameAMapper {
 //    void insertGameItem1(int count, GameItemAVO gameItemAVO);
     void insertGameItem1(GameItemAVO gameItemAVO);
     void insertGameItem2(GameItemAVO gameItemAVO);
-    void insertResult(ResultVO resultVO);
+    void insertResult(ResultAVO resultVO);
     int selectGID();
     List<GameAVO> selectList();
     GameAVO selectGame(int gId);

@@ -1,10 +1,10 @@
 package com.quizproject.playAType;
 
-import com.quizproject.gameAType.ResultVO;
+import com.quizproject.gameAType.ResultAVO;
 
 public interface PlayAService {
     void insertPlay(PlayAVO playAVO);
     int insertPlayItem(PlayItemAVO playItemAVO);
-    ResultVO selectResult();
+    ResultAVO selectResult();
     void updatePlay();
 }

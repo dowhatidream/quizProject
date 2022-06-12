@@ -9,7 +9,7 @@ public class GameVO {
     private String intro;
     private String thumbnail;
     private String type;
-    private String uId;
+    private int uId;
     private String firstDt;
     private String lastDt;
 }

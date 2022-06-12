@@ -1,6 +1,6 @@
 package com.quizproject.playAType;
 
-import com.quizproject.gameAType.ResultVO;
+import com.quizproject.gameAType.ResultAVO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -17,7 +17,7 @@ public class PlayADao {
     public int insertPlayItem(PlayItemAVO playItemAVO){
         return playAMapper.insertPlayItem(playItemAVO);
     }
-    public ResultVO selectResult(int pId) {
+    public ResultAVO selectResult(int pId) {
         return playAMapper.selectResult(pId);
     }
     public void updatePlay(int pId){playAMapper.updatePlay(pId);}

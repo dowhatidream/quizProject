@@ -7,7 +7,7 @@ public interface GameAService {
 
     void addGame(GameAVO gameAVO);
     void addGameItem(GameItemAVO gameItemAVO);
-    void addResult(ResultVO resultVO);
+    void addResult(ResultAVO resultVO);
     List<GameAVO> selectList();
     GameAVO selectGame(int gId);
     // 게임테스트 질문 조회

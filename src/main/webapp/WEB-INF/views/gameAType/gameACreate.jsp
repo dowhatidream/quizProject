@@ -88,14 +88,12 @@
                 <select name="score1">
                     <option value="1">1</option>
                     <option value="2">2</option>
-                    <option value="3">3</option>
                 </select>
                 <br />
                 <input id='answer2' type='text' placeholder='선택지2를 입력해주세요.' name="content2"/>
                 <select name="score2">
                     <option value="1">1</option>
                     <option value="2">2</option>
-                    <option value="3">3</option>
                 </select>
                 <br /><br />
             </div>

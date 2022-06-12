@@ -17,8 +17,8 @@
     </insert>
 
     <insert id="insertResult">
-        INSERT INTO RESULT(gId, value)
-        VALUES (#{gId}, #{value1}), (#{gId}, #{value2})
+        INSERT INTO RESULT(gId, value, serial)
+        VALUES (#{gId}, #{value1}, 1), (#{gId}, #{value2}, 2)
     </insert>
 
     <select id="selectGID" resultType="Integer">

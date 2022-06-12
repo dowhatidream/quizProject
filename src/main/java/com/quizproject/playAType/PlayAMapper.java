@@ -1,12 +1,12 @@
 package com.quizproject.playAType;
 
-import com.quizproject.gameAType.ResultVO;
+import com.quizproject.gameAType.ResultAVO;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface PlayAMapper {
     void insertPlay(PlayAVO playAVO);
     int insertPlayItem(PlayItemAVO playItemAVO);
-    ResultVO selectResult(int pId);
+    ResultAVO selectResult(int pId);
     void updatePlay(int pId);
 }

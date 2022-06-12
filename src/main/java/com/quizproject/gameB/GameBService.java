@@ -7,5 +7,5 @@ public interface GameBService {
     HashMap<String, Object> insertGame(GameVO gameVO);
 
     // 게임아이템 삽입
-    HashMap<String, Object> insertGameItem(GameItemVO gameItemVO);
+    HashMap<String, Object> insertGameItem(HashMap<String, String> paramMap);
 }
