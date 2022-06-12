@@ -7,5 +7,5 @@ public class ResultVO {
     private int gId;
     private String value1;
     private String value2;
-    private String value3;
+//    private String value3;
 }

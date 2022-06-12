@@ -76,8 +76,8 @@
         1) <input type="text" name="value1" id="val1">
         <br/>
         2)<input type="text" name="value2" id="val2">
-        <br/>
-        3)<input type="text" name="value3" id="val3">
+<%--        <br/>--%>
+<%--        3)<input type="text" name="value3" id="val3">--%>
         <br/><br/>
         <h3>문제</h3>
         <div id="main">

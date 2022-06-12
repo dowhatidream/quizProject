@@ -28,6 +28,24 @@
             })
         }
 
+        function addPlay(gId){
+            console.log("gid: " + gId);
+            const sendData = {"gId":gId}
+            $.ajax({
+                url: "/gameAType/addPlay.ajax",
+                type: "POST",
+                data: sendData,
+                dataType: "text",
+                contentType: "application/x-www-form-urlencoded;charset=UTF-8",
+                success: function (data) {
+                    console.log("success");
+                },
+                errors: function (data) {
+                    console.log("errors!");
+                }
+            })
+        }
+
     </script>
 
 </head>
@@ -44,7 +62,7 @@
       </tr>
       <c:forEach items="${vo}" var="vo">
           <tr>
-              <td> <a href="/playAType/playGame.do?gId=${vo.GId}">${vo.title}</a></td>
+              <td onclick="addPlay(${vo.GId})"> <a href="/playAType/playGame.do?gId=${vo.GId}">${vo.title}</a></td>
               <td>${vo.intro}</td>
               <td>${vo.GId}</td>
           </tr>

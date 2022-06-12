@@ -28,6 +28,22 @@
             (#{piId}+1, #{answer2}, #{pId}, #{giId2}, 2, now(), now()),
             (#{piId}+2, #{answer3}, #{pId}, #{giId3}, 3, now(), now())
     </insert>
+    <select id="selectResult" parameterType="INTEGER" resultType="ResultVO">
+        SELECT COUNT(*) AS score, D.value AS value1
+          FROM PLAYITEM AS A
+            INNER JOIN PLAY AS B
+                    ON B.pId = A.pId
+            INNER JOIN GAMEITEM AS C
+                    ON B.gId = C.gId
+                   AND A.giId = C.giId
+            INNER JOIN RESULT AS D
+                    ON D.gId = B.gId
+                   AND D.serial = C.score
+        WHERE A.pId = #{pId}
+        GROUP BY C.score
+        ORDER BY score DESC
+        LIMIT 1
+    </select>
 </mapper>
 
 

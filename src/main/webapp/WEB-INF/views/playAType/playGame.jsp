@@ -26,10 +26,9 @@
                 data: $("#playA").serialize(),
                 dataType: "text",
                 contentType: "application/x-www-form-urlencoded;charset=UTF-8",
-                success: function (data) {
+                success: function () {
                     console.log("success");
-                    const val1 = $('input[name="giId"]:checked').val();
-                    console.log(val1);
+                    window.location.href = "../playAType/playGameAResult.do";
                 },
                 error: function (request, error) {
                     console.log("message:"+request.responseText+"\n error: "+error);

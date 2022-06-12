@@ -1,6 +1,7 @@
 package com.quizproject.gameAType;
 
 import com.quizproject.playAType.PlayAService;
+import com.quizproject.playAType.PlayAVO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.configurationprocessor.json.JSONObject;
@@ -79,7 +80,16 @@ public class GameAController {
         return "/gameAType/gameAResult";
     }
 
+    @PostMapping(value = "/gameAType/addPlay.ajax")
+    public String addData(int gId, PlayAVO playAVO){
+        System.out.println(">>>>> addplay..gId:" + gId);
 
+        playAVO.setGId(gId);
+        playAService.insertPlay(playAVO);
+        System.out.println("addplay.ajax..playAVO: " + playAVO);
+
+        return "success";
+    }
 
 
 

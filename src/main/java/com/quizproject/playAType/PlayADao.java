@@ -17,5 +17,7 @@ public class PlayADao {
     public int insertPlayItem(PlayItemAVO playItemAVO){
         return playAMapper.insertPlayItem(playItemAVO);
     }
-
+    public ResultVO selectResult(int pId) {
+        return playAMapper.selectResult(pId);
+    }
 }
