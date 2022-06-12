@@ -8,4 +8,5 @@ public interface PlayAMapper {
     void insertPlay(PlayAVO playAVO);
     int insertPlayItem(PlayItemAVO playItemAVO);
     ResultVO selectResult(int pId);
+    void updatePlay(int pId);
 }

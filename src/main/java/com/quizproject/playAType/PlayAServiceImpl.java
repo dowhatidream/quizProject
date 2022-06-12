@@ -30,4 +30,9 @@ public class PlayAServiceImpl implements PlayAService {
     public ResultVO selectResult() {
         return playADao.selectResult(pid);
     }
+
+    @Override
+    public void updatePlay() {
+        playADao.updatePlay(pid);
+    }
 }

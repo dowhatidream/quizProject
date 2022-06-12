@@ -6,4 +6,5 @@ public interface PlayAService {
     void insertPlay(PlayAVO playAVO);
     int insertPlayItem(PlayItemAVO playItemAVO);
     ResultVO selectResult();
+    void updatePlay();
 }

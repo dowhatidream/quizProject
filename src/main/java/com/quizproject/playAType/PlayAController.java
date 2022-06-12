@@ -72,6 +72,7 @@ public class PlayAController {
         System.out.println(">>>>> playItemAVO: " + playItemAVO);
 
         service.insertPlayItem(playItemAVO);
+        service.updatePlay();
 
         return "/playAType/playGame";
     }

@@ -20,4 +20,5 @@ public class PlayADao {
     public ResultVO selectResult(int pId) {
         return playAMapper.selectResult(pId);
     }
+    public void updatePlay(int pId){playAMapper.updatePlay(pId);}
 }
